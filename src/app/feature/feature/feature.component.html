@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="toggleSideNav()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Premier League </span>
+  <!-- <img src="assets/Images/pl.jpg" alt="" /> -->
+  <span class="example-spacer"></span>
+
+  <button
+    mat-icon-button
+    class="example-icon"
+    matTooltip="Logout"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="sidenav" #sidenav mode="side">
+    <ul class="nav-items">
+      <li>
+        <a [routerLink]="['pointtable']" routerLinkActive="router-link-active"
+          >Table</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['fixtures']" routerLinkActive="router-link-active"
+          >Fixtures</a
+        >
+      </li>
+    </ul>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidecontent">
+    <!-- Your main content goes here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

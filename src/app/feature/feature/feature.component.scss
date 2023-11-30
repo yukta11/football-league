@@ -1,0 +1,48 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-container {
+  position: absolute;
+  top: 64px; /* Adjust this value based on your toolbar height */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.sidenav {
+  width: 175px;
+  background-color: blueviolet;
+  padding: 10px;
+  color: white;
+}
+.sidecontent {
+  padding: 10px 20px;
+}
+
+.nav-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-items li {
+  padding: 15px;
+  border-bottom: 1px solid #555; /* Set your preferred border color */
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: white; /* Set your preferred text color */
+  font-size: 16px;
+  transition: color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.nav-items li a:hover {
+  color: #ff4081; /* Set your preferred hover color */
+}
+
+.sidecontent {
+  padding: 20px;
+}
+
+.router-link-active {
+  background-color: #555; /* Set your preferred active link background color */
+}
