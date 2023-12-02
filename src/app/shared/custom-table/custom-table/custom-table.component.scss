@@ -6,3 +6,13 @@
 .mat-table {
   width: 100%; /* Ensure the table takes full width */
 }
+.pointstable__team {
+  display: flex;
+  align-items: center;
+  span {
+    margin-left: 10px;
+  }
+}
+.team-logo {
+  max-width: 32px;
+}

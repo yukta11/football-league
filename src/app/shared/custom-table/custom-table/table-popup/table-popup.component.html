@@ -1,0 +1,82 @@
+<div class="form-container">
+  <div class="heading">
+    <button mat-icon-button (click)="closeDialog()" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <form [formGroup]="tableRowForm" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Edit </mat-label>
+      <input matInput disabled value="Google" />
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Team Name</mat-label>
+            <input formControlName="team" matInput />
+          </mat-form-field>
+          <mat-error *ngIf="tableRowForm.get('team').hasError('required')"
+            >Team Name is required</mat-error
+          >
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Played</mat-label>
+            <input formControlName="played" matInput />
+          </mat-form-field>
+          <mat-error *ngIf="tableRowForm.get('played').hasError('required')"
+            >No. of matches Played is required</mat-error
+          >
+          <mat-error *ngIf="tableRowForm.get('played').hasError('pattern')"
+            >Not valid type</mat-error
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Wins</mat-label>
+            <input formControlName="win" matInput />
+          </mat-form-field>
+          <mat-error *ngIf="tableRowForm.get('win').hasError('required')"
+            >No. of Wins is required</mat-error
+          >
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Drawn</mat-label>
+            <input formControlName="draw" matInput />
+          </mat-form-field>
+          <mat-error *ngIf="tableRowForm.get('draw').hasError('required')"
+            >No. of draw is required</mat-error
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Loss</mat-label>
+            <input formControlName="loss" matInput />
+          </mat-form-field>
+          <mat-error *ngIf="tableRowForm.get('loss').hasError('required')"
+            >No. of loss is required</mat-error
+          >
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Points</mat-label>
+            <input formControlName="points" matInput />
+          </mat-form-field>
+          <mat-error *ngIf="tableRowForm.get('points').hasError('required')"
+            >No. of points is required</mat-error
+          >
+        </td>
+      </tr>
+    </table>
+    <button mat-raised-button color="primary" (click)="onUpdate()">
+      Update
+    </button>
+  </form>
+</div>

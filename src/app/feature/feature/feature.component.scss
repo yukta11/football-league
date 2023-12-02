@@ -35,14 +35,21 @@
   transition: color 0.3s ease; /* Add a smooth transition effect */
 }
 
-.nav-items li a:hover {
-  color: #ff4081; /* Set your preferred hover color */
+.nav-items li :hover {
+  color: #ffffff; /* Set your preferred hover color */
 }
 
 .sidecontent {
   padding: 20px;
 }
+.onHover:hover {
+  background-color: #555;
+}
 
 .router-link-active {
   background-color: #555; /* Set your preferred active link background color */
+}
+.tool-bar-img {
+  max-width: 40px;
+  padding: 5px 5px;
 }

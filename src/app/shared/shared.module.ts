@@ -29,6 +29,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
@@ -56,7 +57,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatButtonToggleModule,
     MatTreeModule,
-
     MatBadgeModule,
     MatGridListModule,
     MatRadioModule,
@@ -64,6 +64,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTooltipModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [
     MatButtonModule,
@@ -94,9 +95,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatGridListModule,
     MatRadioModule,
     MatDatepickerModule,
-
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
 })
 export class SharedModule {}

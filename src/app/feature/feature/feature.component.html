@@ -7,33 +7,41 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
+  <img
+    class="tool-bar-img"
+    src="https://www.premierleague.com/resources/rebrand/v7.134.0/i/elements/pl-main-logo.png"
+    alt=""
+  />
   <span>Premier League </span>
   <!-- <img src="assets/Images/pl.jpg" alt="" /> -->
   <span class="example-spacer"></span>
 
   <button
-    mat-icon-button
+    (click)="onLogout()"
+    mat-raised-button
     class="example-icon"
-    matTooltip="Logout"
     aria-label="Example icon-button with share icon"
   >
     <mat-icon>exit_to_app</mat-icon>
+    Logout
   </button>
 </mat-toolbar>
 
 <mat-sidenav-container class="example-container">
   <mat-sidenav class="sidenav" #sidenav mode="side">
     <ul class="nav-items">
-      <li>
-        <a [routerLink]="['pointtable']" routerLinkActive="router-link-active"
-          >Table</a
-        >
-      </li>
-      <li>
-        <a [routerLink]="['fixtures']" routerLinkActive="router-link-active"
-          >Fixtures</a
-        >
-      </li>
+      <div class="onHover" routerLinkActive="router-link-active">
+        <li>
+          <a [routerLink]="['pointtable']" routerLinkActive="router-link-active"
+            >Table</a
+          >
+        </li>
+      </div>
+      <div class="onHover" routerLinkActive="router-link-active">
+        <li>
+          <a [routerLink]="['fixtures']">Fixtures</a>
+        </li>
+      </div>
     </ul>
   </mat-sidenav>
 

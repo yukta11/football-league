@@ -1,4 +1,5 @@
 <app-custom-table
   [columns]="displayedColumns"
-  [dataSource]="dataSource"
+  [dataSource]="dataSource | async"
+  (onEditClick)="getEditData($event)"
 ></app-custom-table>
