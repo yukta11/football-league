@@ -13,23 +13,13 @@ export class CustomTableComponent {
   @Input() columns: string[] = [];
   @Input() dataSource: any[] = [];
   @Output() onEditClick: EventEmitter<any> = new EventEmitter();
+  @Output() onDeleteClick: EventEmitter<any> = new EventEmitter();
   constructor(private dialog: MatDialog) {}
 
   onEdit(row: PointTableModel) {
-    // console.log('row', row);
-    // this.openTableRowDetail('edit', row);
     this.onEditClick.emit(row);
   }
   onDelete(row: PointTableModel) {
-    console.log('row', row);
-    this.openTableRowDetail('delete', row);
-  }
-  openTableRowDetail(action: string, row: PointTableModel) {
-    const dialogRef = this.dialog.open(TablePopupComponent, {
-      data: {
-        tablerow: row,
-        action: action,
-      },
-    });
+    this.onDeleteClick.emit(row);
   }
 }

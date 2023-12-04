@@ -12,14 +12,16 @@ export class AuthService {
     username: string,
     password: string
   ): Observable<userdetailModel | null> {
-    if (username === 'yukta' && password === 'Admin@123') {
-      console.log('passed');
-      const user: userdetailModel = { username, token: 'mocked-token' };
-      localStorage.setItem('user', JSON.stringify(user));
+    if (username === 'admin' && password === 'admin') {
+      const user: userdetailModel = { username, token: 'Authenticated_token' };
+      this.setItemInLocalStorage(user);
       return of(user);
     } else {
       return of(null);
     }
+  }
+  setItemInLocalStorage(user) {
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   logout(): void {

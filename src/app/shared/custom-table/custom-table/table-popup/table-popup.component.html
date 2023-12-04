@@ -1,15 +1,13 @@
 <div class="form-container">
   <div class="heading">
-    <button mat-icon-button (click)="closeDialog()" aria-label="Close dialog">
-      <mat-icon>close</mat-icon>
-    </button>
+    <div></div>
+    <div>
+      <button mat-icon-button (click)="closeDialog()" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
   </div>
   <form [formGroup]="tableRowForm" class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Edit </mat-label>
-      <input matInput disabled value="Google" />
-    </mat-form-field>
-
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>
@@ -34,6 +32,16 @@
           >
         </td>
       </tr>
+      <tr>
+        <mat-form-field class="example-full-width">
+          <mat-label>Image Url </mat-label>
+          <input formControlName="imagepath" matInput />
+        </mat-form-field>
+        <mat-error *ngIf="tableRowForm.get('imagepath').hasError('required')"
+          >Image Path is required</mat-error
+        >
+      </tr>
+
       <tr>
         <td>
           <mat-form-field class="example-full-width">
@@ -75,7 +83,20 @@
         </td>
       </tr>
     </table>
-    <button mat-raised-button color="primary" (click)="onUpdate()">
+    <button
+      *ngIf="data.action === 'add'"
+      mat-raised-button
+      color="primary"
+      (click)="onAdd()"
+    >
+      Add
+    </button>
+    <button
+      *ngIf="data.action === 'edit'"
+      mat-raised-button
+      color="primary"
+      (click)="onUpdate()"
+    >
       Update
     </button>
   </form>

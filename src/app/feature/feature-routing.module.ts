@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FeatureComponent } from './feature/feature.component';
+import { AuthGuard } from '../guard/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: FeatureComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

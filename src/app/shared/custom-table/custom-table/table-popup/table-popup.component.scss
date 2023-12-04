@@ -1,6 +1,10 @@
 .form-container {
   padding: 52px 32px;
 }
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
 .example-form {
   min-width: 150px;
   max-width: 500px;

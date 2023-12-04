@@ -16,15 +16,20 @@
   }
   &-team {
     display: flex;
+    width: 300px;
     gap: 10px;
-    justify-content: flex-end;
+    flex-grow: 2;
+    justify-content: space-around;
     align-items: center;
-    img {
-      max-width: 50px;
-    }
+  }
+  img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
   }
   &-time {
     border: 1px dotted gray;
+
     border-radius: 2px;
     padding: 10px;
     font-weight: bold;
