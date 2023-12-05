@@ -79,4 +79,18 @@ export class PointTableEffects {
       map(() => Action.getPointTableStart())
     )
   );
+
+  searchPointTable$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(Action.searchPointTableStart),
+      switchMap(({ query }) =>
+        this.pointTableService.searchTeam(query).pipe(
+          map((response) =>
+            Action.getPointTableSuccess({ pointTable: response })
+          ),
+          catchError(() => of(Action.addPointTableFail()))
+        )
+      )
+    )
+  );
 }

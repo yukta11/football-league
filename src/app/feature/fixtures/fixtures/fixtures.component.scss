@@ -1,44 +1,49 @@
-.fixture-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #f3f1ed;
-  width: 70%;
-  margin: auto;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  cursor: pointer;
+.main-container {
+  height: 86%; /* Set your desired fixed height */
+  overflow: auto; /* Use 'auto' to add a scrollbar if content overflows */
 
-  p {
-    margin: 0;
-    font-weight: bold;
-  }
-  &-team {
+  .fixture-container {
     display: flex;
-    width: 300px;
-    gap: 10px;
-    flex-grow: 2;
-    justify-content: space-around;
     align-items: center;
-  }
-  img {
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
-  }
-  &-time {
-    border: 1px dotted gray;
+    justify-content: space-around;
+    background-color: #f3f1ed;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
 
-    border-radius: 2px;
-    padding: 10px;
-    font-weight: bold;
+    p {
+      margin: 0;
+      font-weight: bold;
+    }
+    &-team {
+      display: flex;
+      width: 300px;
+      gap: 10px;
+      flex-grow: 2;
+      justify-content: space-around;
+      align-items: center;
+    }
+    img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+    &-time {
+      border: 1px dotted gray;
+
+      border-radius: 2px;
+      padding: 10px;
+      font-weight: bold;
+    }
   }
-}
-.fixture-container:hover {
-  background-color: blueviolet;
-  color: white;
-  .fixture-container-time {
-    border: 1px dotted white;
+  .fixture-container:hover {
+    background-color: blueviolet;
+    color: white;
+    .fixture-container-time {
+      border: 1px dotted white;
+    }
   }
 }

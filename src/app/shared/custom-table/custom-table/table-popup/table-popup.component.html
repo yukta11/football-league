@@ -15,7 +15,11 @@
             <mat-label>Team Name</mat-label>
             <input formControlName="team" matInput />
           </mat-form-field>
-          <mat-error *ngIf="tableRowForm.get('team').hasError('required')"
+          <mat-error
+            *ngIf="
+              tableRowForm.get('team').touched &&
+              tableRowForm.get('team').hasError('required')
+            "
             >Team Name is required</mat-error
           >
         </td>
@@ -24,7 +28,11 @@
             <mat-label>Played</mat-label>
             <input formControlName="played" matInput />
           </mat-form-field>
-          <mat-error *ngIf="tableRowForm.get('played').hasError('required')"
+          <mat-error
+            *ngIf="
+              tableRowForm.get('played').touched &&
+              tableRowForm.get('played').hasError('required')
+            "
             >No. of matches Played is required</mat-error
           >
           <mat-error *ngIf="tableRowForm.get('played').hasError('pattern')"
@@ -37,7 +45,11 @@
           <mat-label>Image Url </mat-label>
           <input formControlName="imagepath" matInput />
         </mat-form-field>
-        <mat-error *ngIf="tableRowForm.get('imagepath').hasError('required')"
+        <mat-error
+          *ngIf="
+            tableRowForm.get('imagepath').touched &&
+            tableRowForm.get('imagepath').hasError('required')
+          "
           >Image Path is required</mat-error
         >
       </tr>
@@ -48,8 +60,15 @@
             <mat-label>Wins</mat-label>
             <input formControlName="win" matInput />
           </mat-form-field>
-          <mat-error *ngIf="tableRowForm.get('win').hasError('required')"
+          <mat-error
+            *ngIf="
+              tableRowForm.get('win').touched &&
+              tableRowForm.get('win').hasError('required')
+            "
             >No. of Wins is required</mat-error
+          >
+          <mat-error *ngIf="tableRowForm.get('win').hasError('pattern')"
+            >Not valid type</mat-error
           >
         </td>
         <td>
@@ -57,8 +76,15 @@
             <mat-label>Drawn</mat-label>
             <input formControlName="draw" matInput />
           </mat-form-field>
-          <mat-error *ngIf="tableRowForm.get('draw').hasError('required')"
+          <mat-error
+            *ngIf="
+              tableRowForm.get('draw').touched &&
+              tableRowForm.get('draw').hasError('required')
+            "
             >No. of draw is required</mat-error
+          >
+          <mat-error *ngIf="tableRowForm.get('draw').hasError('pattern')"
+            >Not valid type</mat-error
           >
         </td>
       </tr>
@@ -68,8 +94,15 @@
             <mat-label>Loss</mat-label>
             <input formControlName="loss" matInput />
           </mat-form-field>
-          <mat-error *ngIf="tableRowForm.get('loss').hasError('required')"
+          <mat-error
+            *ngIf="
+              tableRowForm.get('loss').touched &&
+              tableRowForm.get('loss').hasError('required')
+            "
             >No. of loss is required</mat-error
+          >
+          <mat-error *ngIf="tableRowForm.get('loss').hasError('pattern')"
+            >Not valid type</mat-error
           >
         </td>
         <td>
@@ -77,8 +110,15 @@
             <mat-label>Points</mat-label>
             <input formControlName="points" matInput />
           </mat-form-field>
-          <mat-error *ngIf="tableRowForm.get('points').hasError('required')"
+          <mat-error
+            *ngIf="
+              tableRowForm.get('points').touched &&
+              tableRowForm.get('points').hasError('required')
+            "
             >No. of points is required</mat-error
+          >
+          <mat-error *ngIf="tableRowForm.get('points').hasError('pattern')"
+            >Not valid type</mat-error
           >
         </td>
       </tr>

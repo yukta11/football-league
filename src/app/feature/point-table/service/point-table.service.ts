@@ -20,21 +20,31 @@ export class PointTableService {
         })
       );
   }
+
   addTeamRowData(data: any): Observable<any> {
-    console.log('data', data);
     return this.http.post(`${environment.baseUrl}/point-table`, data);
   }
+
   editTeamRowData(data: any): Observable<any> {
     let id = data.id;
     return this.http.patch(`${environment.baseUrl}/point-table/${id}`, data);
   }
+
   deleteTeamRowData(data: any): Observable<any> {
     let id = data.id;
     return this.http.delete(`${environment.baseUrl}/point-table/${id}`, data);
   }
+
   searchTeam(teamName: string): Observable<PointTableModel[]> {
-    return this.http.get<PointTableModel[]>(
-      `${environment.baseUrl}/point-table?team_like=${teamName}`
-    );
+    return this.http
+      .get<PointTableModel[]>(
+        `${environment.baseUrl}/point-table?team_like=${teamName}`
+      )
+      .pipe(
+        map((data) => {
+          // Sort the data based on the "points" property
+          return data.slice().sort((a, b) => +b.points - +a.points);
+        })
+      );
   }
 }

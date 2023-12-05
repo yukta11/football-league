@@ -1,4 +1,4 @@
-<div>
+<div class="login">
   <mat-card>
     <mat-card-title>Login</mat-card-title>
     <mat-card-content>
@@ -12,7 +12,11 @@
               formControlName="username"
             />
           </mat-form-field>
-          <mat-error *ngIf="form.get('username').hasError('required')"
+          <mat-error
+            *ngIf="
+              form.get('username').touched &&
+              form.get('username').hasError('required')
+            "
             >Username is required</mat-error
           >
         </p>
@@ -26,9 +30,16 @@
               formControlName="password"
             />
           </mat-form-field>
-          <mat-error *ngIf="form.get('password').hasError('required')"
+          <mat-error
+            *ngIf="
+              form.get('password').touched &&
+              form.get('password').hasError('required')
+            "
             >Password is required</mat-error
           >
+          <mat-error *ngIf="form.get('password').hasError('pattern')"
+            >Enter atleast 5 character
+          </mat-error>
         </p>
 
         <!-- <p *ngIf="error" class="error">

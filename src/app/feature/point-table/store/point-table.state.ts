@@ -13,3 +13,13 @@ export const initalState: pointTableState = {
   success: false,
   error: '',
 };
+// export interface searchTableState {
+//   loading:boolean;
+//   pointTable:PointTableModel[];
+//   success:boolean;
+//   error:string;
+// }
+// export const searchInitalState:searchTableState ={
+//   loading:false;
+//   p
+// }

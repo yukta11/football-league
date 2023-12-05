@@ -44,3 +44,14 @@ export const deletePointTableSuccess = createAction(
 export const deletePointTableFail = createAction(
   '[Point Table] deletePointTable fail'
 );
+export const searchPointTableStart = createAction(
+  '[Point Table] searchPointTable start',
+  props<{ query: string }>()
+);
+export const searchPointTableSuccess = createAction(
+  '[Point Table] searchPointTable success',
+  props<{ pointTable: PointTableModel[] }>()
+);
+export const searchPointTableFail = createAction(
+  '[Point Table] searchPointTable fail'
+);

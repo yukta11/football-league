@@ -6,12 +6,15 @@ import { Store } from '@ngrx/store';
 import {
   deletePointTableStart,
   getPointTableStart,
+  searchPointTableStart,
+  searchPointTableSuccess,
 } from '../store/point-table.actions';
 import { selectPointTableData } from '../store/point-table.selectors';
-import { Observable, every } from 'rxjs';
+import { Observable, debounceTime, every } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { TablePopupComponent } from 'src/app/shared/custom-table/custom-table/table-popup/table-popup.component';
 import { MatTableDataSource } from '@angular/material/table';
+import { matSnackBarService } from 'src/app/shared/snackbar.service';
 
 @Component({
   selector: 'app-point-table',
@@ -35,7 +38,8 @@ export class PointTableComponent implements OnInit {
   constructor(
     private store: Store,
     private dialog: MatDialog,
-    private pointableService: PointTableService
+    private pointableService: PointTableService,
+    private matsnackService: matSnackBarService
   ) {}
   ngOnInit(): void {
     this.store.dispatch(getPointTableStart());
@@ -49,6 +53,7 @@ export class PointTableComponent implements OnInit {
   }
   getDeletedrowData(row) {
     this.store.dispatch(deletePointTableStart({ data: row }));
+    this.matsnackService.showTopSnackBar(row.team + ' ' + 'is deleted');
   }
   onAddNewTeam() {
     this.openTableRowDetail('add');
@@ -62,13 +67,25 @@ export class PointTableComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((response) => {
       this.store.dispatch(getPointTableStart());
-      this.store.select(selectPointTableData).subscribe((data) => {});
+      if (response) {
+        if (action.toLowerCase() === 'edit') {
+          this.matsnackService.showTopSnackBar(
+            response.team + ' ' + 'is updated!!!'
+          );
+        } else if (action.toLowerCase() === 'add') {
+          this.matsnackService.showTopSnackBar(
+            response.team + ' ' + 'is added!!!'
+          );
+        }
+      }
     });
   }
-  searchTeam(searchedValue) {
-    console.log(searchedValue.target.value);
-    this.dataSource = this.pointableService.searchTeam(
-      searchedValue.target.value
-    );
+  searchTeam(event) {
+    console.log(event.target.value);
+    this.store.dispatch(searchPointTableStart({ query: event.target.value }));
+
+    // this.dataSource = this.pointableService.searchTeam(
+    //   searchedValue.target.value
+    // );
   }
 }

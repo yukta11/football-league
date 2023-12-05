@@ -21,7 +21,7 @@
       "loss": 1,
       "goalsFor": 18,
       "goalsAgainst": 7,
-      "points": 19,
+      "points": "19",
       "imagepath": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png"
     },
     {
@@ -223,12 +223,12 @@
       "win": "10",
       "draw": "0",
       "loss": "0",
-      "points": "30",
+      "points": "31",
       "id": 21
     },
     {
       "team": "Aston Villa",
-      "imagepath": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Aston_Villa_logo.svg/225px-Aston_Villa_logo.svg.png",
+      "imagepath": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Aston_Villa_logo.svg/640px-Aston_Villa_logo.svg.png",
       "played": "10",
       "win": "2",
       "draw": "2",
@@ -279,6 +279,50 @@
       "awayteam": {
         "name": "Leicester",
         "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/375.png"
+      },
+      "time": "20:45 PM"
+    },
+    {
+      "hometeam": {
+        "name": "Newcastle United",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/361.png"
+      },
+      "awayteam": {
+        "name": "Norwich City",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/381.png"
+      },
+      "time": "20:45 PM"
+    },
+    {
+      "hometeam": {
+        "name": "Leeds United",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/357.png"
+      },
+      "awayteam": {
+        "name": "Everton",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/368.png"
+      },
+      "time": "20:45 PM"
+    },
+    {
+      "hometeam": {
+        "name": "Wolverhampton Wanderers",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/380.png"
+      },
+      "awayteam": {
+        "name": "Burnley",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/379.png"
+      },
+      "time": "20:45 PM"
+    },
+    {
+      "hometeam": {
+        "name": "West Ham United",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/371.png"
+      },
+      "awayteam": {
+        "name": "Southampton",
+        "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/376.png"
       },
       "time": "20:45 PM"
     }

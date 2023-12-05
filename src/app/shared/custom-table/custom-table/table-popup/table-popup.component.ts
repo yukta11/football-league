@@ -47,10 +47,19 @@ export class TablePopupComponent implements OnInit {
         '',
         [Validators.required, Validators.pattern('^(0|[1-9][0-9]*)$')],
       ],
-      win: ['', Validators.required],
-      draw: ['', Validators.required],
-      loss: ['', Validators.required],
-      points: ['', Validators.required],
+      win: ['', [Validators.required, Validators.pattern('^(0|[1-9][0-9]*)$')]],
+      draw: [
+        '',
+        [Validators.required, Validators.pattern('^(0|[1-9][0-9]*)$')],
+      ],
+      loss: [
+        '',
+        [Validators.required, Validators.pattern('^(0|[1-9][0-9]*)$')],
+      ],
+      points: [
+        '',
+        [Validators.required, Validators.pattern('^(0|[1-9][0-9]*)$')],
+      ],
     });
 
     this.tableRowForm.patchValue({
@@ -70,11 +79,10 @@ export class TablePopupComponent implements OnInit {
       this.tableRowForm.markAllAsTouched();
       return;
     } else if (this.tableRowForm.valid) {
-      console.log(this.tableRowForm.value);
       this.store.dispatch(
         addPointTableStart({ data: this.tableRowForm.value })
       );
-      this.dialogRef.close();
+      this.dialogRef.close(this.tableRowForm.value);
     }
   }
   onUpdate() {
@@ -82,11 +90,10 @@ export class TablePopupComponent implements OnInit {
       this.tableRowForm.markAllAsTouched();
       return;
     } else if (this.tableRowForm.valid) {
-      console.log(this.tableRowForm.value);
       this.store.dispatch(
         editPointTableStart({ data: this.tableRowForm.value })
       );
-      this.dialogRef.close();
+      this.dialogRef.close(this.tableRowForm.value);
     }
   }
   closeDialog() {

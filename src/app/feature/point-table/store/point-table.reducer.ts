@@ -16,5 +16,14 @@ export const pointTableReducer = createReducer(
   on(Action.getPointTableFail, (state) => ({
     ...state,
     loading: false,
+  })),
+  on(Action.searchPointTableStart, (state) => ({
+    ...state,
+    loading: true,
+  })),
+  on(Action.searchPointTableSuccess, (state, action) => ({
+    ...state,
+    loading: false,
+    data: action.pointTable,
   }))
 );
