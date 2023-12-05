@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from 'src/app/service.service';
 import { PointTableModel } from 'src/app/shared/types/point-table.types';
 import { PointTableService } from '../service/point-table.service';
 import { Store } from '@ngrx/store';
@@ -83,9 +82,5 @@ export class PointTableComponent implements OnInit {
   searchTeam(event) {
     console.log(event.target.value);
     this.store.dispatch(searchPointTableStart({ query: event.target.value }));
-
-    // this.dataSource = this.pointableService.searchTeam(
-    //   searchedValue.target.value
-    // );
   }
 }

@@ -74,6 +74,7 @@ export class TablePopupComponent implements OnInit {
       points: this.datasource.points,
     });
   }
+
   onAdd() {
     if (this.tableRowForm.invalid) {
       this.tableRowForm.markAllAsTouched();
@@ -85,6 +86,7 @@ export class TablePopupComponent implements OnInit {
       this.dialogRef.close(this.tableRowForm.value);
     }
   }
+
   onUpdate() {
     if (this.tableRowForm.invalid) {
       this.tableRowForm.markAllAsTouched();
@@ -96,6 +98,7 @@ export class TablePopupComponent implements OnInit {
       this.dialogRef.close(this.tableRowForm.value);
     }
   }
+
   closeDialog() {
     this.dialogRef.close();
   }

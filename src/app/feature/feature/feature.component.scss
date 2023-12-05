@@ -3,7 +3,7 @@
 }
 .example-container {
   position: absolute;
-  top: 64px; /* Adjust this value based on your toolbar height */
+  top: 64px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -25,18 +25,18 @@
 
 .nav-items li {
   padding: 15px;
-  border-bottom: 1px solid #555; /* Set your preferred border color */
+  border-bottom: 1px solid #555;
 }
 
 .nav-items li a {
   text-decoration: none;
-  color: white; /* Set your preferred text color */
+  color: white;
   font-size: 16px;
-  transition: color 0.3s ease; /* Add a smooth transition effect */
+  transition: color 0.3s ease;
 }
 
 .nav-items li :hover {
-  color: #ffffff; /* Set your preferred hover color */
+  color: #ffffff;
 }
 
 .sidecontent {
@@ -47,7 +47,7 @@
 }
 
 .router-link-active {
-  background-color: #555; /* Set your preferred active link background color */
+  background-color: #555;
 }
 .tool-bar-img {
   max-width: 40px;
